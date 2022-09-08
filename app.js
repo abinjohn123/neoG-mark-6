@@ -5,18 +5,17 @@ const inputText = document.getElementById('input-text');
 const outputText = document.getElementById('text-output');
 
 const URLGenerator = (text) =>
-  'https://lessonfourapi.tanaypratap.repl.co/translate/yoda.json?text=' + text;
+  'https://api.funtranslations.com/translate/minion.json?text=' + text;
 
 const makeFetch = (url) => {
   fetch(url)
     .then((res) => res.json())
-    .then((json) =>
-      outputValue(json.contents.text + '\n' + json.contents.translated)
-    );
+    .then((json) => (outputText.value = json.contents.translated))
+    .catch(errorHandler);
 };
 
-const outputValue = (text) => {
-  outputText.value = text;
+const errorHandler = (error) => {
+  console.log('Error: \n', error);
 };
 
 const btnClickHandler = () => {
