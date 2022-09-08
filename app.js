@@ -3,9 +3,9 @@
 const btnClick = document.getElementById('btn-translate');
 const inputText = document.getElementById('input-text');
 const outputText = document.getElementById('text-output');
+const minionAPIURL = 'https://api.funtranslations.com/translate/minion.json';
 
-const URLGenerator = (text) =>
-  'https://api.funtranslations.com/translate/minion.json?text=' + text;
+const URLGenerator = (text) => minionAPIURL + '?text=' + text;
 
 const makeFetch = (url) => {
   fetch(url)
