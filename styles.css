@@ -46,6 +46,9 @@ body {
 textarea {
   display: block;
   width: 100%;
+  resize: none;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
 }
 
 .text-output-container {
