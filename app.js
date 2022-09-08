@@ -10,11 +10,13 @@ const URLGenerator = (text) =>
 const makeFetch = (url) => {
   fetch(url)
     .then((res) => res.json())
-    .then(
-      (json) =>
-        (outputText.value =
-          json.contents.text + '\n' + json.contents.translated)
+    .then((json) =>
+      outputValue(json.contents.text + '\n' + json.contents.translated)
     );
+};
+
+const outputValue = (text) => {
+  outputText.value = text;
 };
 
 const btnClickHandler = () => {
